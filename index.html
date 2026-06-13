@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Dumbers - Crowd Runner Prototype</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="game"></div>
+
+    <div id="splashScreen">
+      <div class="studio-logo" aria-label="PixeStudioGames logo">
+        <img src="./assets/images/studio-logo.png" alt="PixeStudioGames" />
+      </div>
+    </div>
+
+    <div id="mainMenu" class="hidden">
+      <div class="menu-card">
+        <div class="app-icon" aria-label="Number Dumbers app icon">
+          <img src="./assets/images/app-icon.png" alt="Number Dumbers app icon" />
+        </div>
+        <div class="menu-kicker">Hyper Crowd Runner</div>
+        <h1>Number Dumbers</h1>
+        <div class="menu-subtitle">Grow the squad, smash red crowds, reach the finish.</div>
+        <div class="wallet-pill">
+          <span aria-hidden="true"></span>
+          <strong id="totalCoins">0</strong>
+        </div>
+        <button id="startCrowdUpgrade" class="upgrade-card" type="button">
+          <span class="upgrade-title">Start Crowd +1</span>
+          <span class="upgrade-meta">Level <strong id="startCrowdLevel">1</strong> - Cost <strong id="startCrowdCost">50</strong></span>
+        </button>
+        <button id="playButton" class="play-button">
+          <span aria-hidden="true">&#9654;</span>
+          Play
+        </button>
+        <div class="menu-chips">
+          <span>Swipe to steer</span>
+          <span>Pick gates</span>
+          <span>Beat bosses</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="hud">
+      <div class="hud-left">
+        <div id="crowdBubble" class="crowd-bubble">
+          <span class="people-icon" aria-hidden="true"></span>
+          <span>Crowd: <strong id="crowdCount">1</strong></span>
+        </div>
+        <div id="hudCoinBubble" class="hud-coin-bubble">
+          <span aria-hidden="true"></span>
+          <strong id="hudCoins">0</strong>
+        </div>
+      </div>
+
+      <div class="hud-center">
+        <div class="level-banner">LEVEL <span id="levelNumber">1</span></div>
+        <div class="progress-shell">
+          <div id="progressFill"></div>
+          <div id="progressRunner" class="progress-runner" aria-hidden="true"></div>
+          <div class="finish-flag" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="hud-right">
+        <button id="restartButton" title="Restart level">
+          <span aria-hidden="true">&#8635;</span>
+          Restart
+        </button>
+      </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+      <div class="overlay-card">
+        <div id="overlayTitle">Victory!</div>
+        <div id="overlaySubtitle">Tap or press restart to run again</div>
+        <div id="coinReward" class="coin-reward hidden">
+          <span aria-hidden="true"></span>
+          <strong id="earnedCoins">0</strong> COINS
+        </div>
+        <button id="nextLevelButton" class="next-level-button">Next Level</button>
+      </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
